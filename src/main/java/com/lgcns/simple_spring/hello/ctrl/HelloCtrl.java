@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lgcns.simple_spring.hello.domain.dto.HelloResponseDTO;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HelloCtrl {
     @GetMapping("/hello")
     public HelloResponseDTO hello() {
-        String koreaTime = LocalDateTime.now() + "[Asia/Seoul]";
-        String timestamp = new Timestamp(System.currentTimeMillis()).toString();
+        String koreaTime = ZonedDateTime.now(ZoneId.of("Asia/Seoul")).toString();
+        String timestamp = String.valueOf(System.currentTimeMillis());
         String message = "Hello, World!";
         
         HelloResponseDTO response = HelloResponseDTO.builder()
