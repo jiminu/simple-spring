@@ -22,3 +22,10 @@ $ curl localhost:8080/hello
 
 $ ssh -i <KEY.pem> ubuntu@<SERVER-IP> "cd ~/app/spring-rest-api/;./start.sh"
 ```
+
+## Remote Stop
+```bash
+# scp -i <KEY.pem> stop.sh ubuntu@<SERVER-IP>:~/app/spring-rest-api
+
+$ ssh -i <KEY.pem> ubuntu@<SERVER-IP> "cd ~/app/spring-rest-api/;./stop.sh"
+```
