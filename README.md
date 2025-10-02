@@ -51,38 +51,38 @@ pwd
 ls build/libs
 
 # start.sh / stop.sh 복사
-scp -i /var/jenkins_home/keys/aws-lgcns.pem \
+scp -i /var/jenkins_home/keys/<KEY.pem> \
 -o StrictHostKeyChecking=no \
-start.sh ubuntu@54.193.112.184:~/app/spring-rest-api
+start.sh ubuntu@<SERVER-IP>:~/app/spring-rest-api
 
-scp -i /var/jenkins_home/keys/aws-lgcns.pem \
+scp -i /var/jenkins_home/keys/<KEY.pem> \
 -o StrictHostKeyChecking=no \
-stop.sh ubuntu@54.193.112.184:~/app/spring-rest-api
+stop.sh ubuntu@<SERVER-IP>:~/app/spring-rest-api
 
 # 기존 java 프로세스 정지
-ssh -i /var/jenkins_home/keys/aws-lgcns.pem \
+ssh -i /var/jenkins_home/keys/<KEY.pem> \
 -o StrictHostKeyChecking=no \
-ubuntu@54.193.112.184 \
+ubuntu@<SERVER-IP> \
 "cd ~/app/spring-rest-api/;./stop.sh"
 
 # 기존 *.jar 파일 삭제
-ssh -i /var/jenkins_home/keys/aws-lgcns.pem \
+ssh -i /var/jenkins_home/keys/<KEY.pem> \
 -o StrictHostKeyChecking=no \
-ubuntu@54.193.112.184 \
+ubuntu@<SERVER-IP> \
 "find /home/ubuntu/app/spring-rest-api -name "*jar" -delete"
 
 # 빌드한 *.jar 파일을 app.jar 로 변경
 mv build/libs/*.jar build/libs/app.jar
 
 # aws instance에 복사
-scp -i /var/jenkins_home/keys/aws-lgcns.pem \
+scp -i /var/jenkins_home/keys/<KEY.pem> \
 -o StrictHostKeyChecking=no \
 build/libs/app.jar \
-ubuntu@54.193.112.184:~/app/spring-rest-api
+ubuntu@<SERVER-IP>:~/app/spring-rest-api
 
 # start.sh 실행
-ssh -i /var/jenkins_home/keys/aws-lgcns.pem \
+ssh -i /var/jenkins_home/keys/<KEY.pem> \
 -o StrictHostKeyChecking=no \
-ubuntu@54.193.112.184 \
+ubuntu@<SERVER-IP> \
 "cd ~/app/spring-rest-api/;./start.sh"
 ```
