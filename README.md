@@ -31,5 +31,10 @@ $ ssh -i <KEY.pem> ubuntu@<SERVER-IP> "cd ~/app/spring-rest-api/;./stop.sh"
 ```
 
 ## Docker
+### Ref
 - https://spring.io/guides/gs/spring-boot-docker
 - openJDK 17
+```bash
+$ sudo docker build --build-arg JAR_FILE=build/libs/\*.jar -t <DOCKERHUB-REPO>/simple-spring:<TAG> .
+$ sudo docker run -d --name simple-spring -p 8080:8080 <DOCKER-IMAGE> 
+```
