@@ -29,3 +29,7 @@ $ ssh -i <KEY.pem> ubuntu@<SERVER-IP> "cd ~/app/spring-rest-api/;./start.sh"
 
 $ ssh -i <KEY.pem> ubuntu@<SERVER-IP> "cd ~/app/spring-rest-api/;./stop.sh"
 ```
+
+## Docker
+- https://spring.io/guides/gs/spring-boot-docker
+- openJDK 17
