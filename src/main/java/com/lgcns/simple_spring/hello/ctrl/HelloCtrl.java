@@ -23,7 +23,7 @@ public class HelloCtrl {
         HelloResponseDTO response = HelloResponseDTO.builder()
                                                     .koreaTime(koreaTime)
                                                     .timestamp(timestamp)
-                                                    .message(message)
+                                                    .message("here is stg")
                                                     .build();
         
         
