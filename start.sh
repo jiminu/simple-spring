@@ -5,7 +5,7 @@
 # ----------------------------------------------------
 
 # 실행할 JAR 파일 이름 (스크립트와 같은 경로에 있어야 함)
-JAR_FILE="simple_spring-0.1.1.jar"
+JAR_FILE="app.jar"
 # 로그를 저장할 파일 경로
 LOG_FILE="./app_start.log"
 

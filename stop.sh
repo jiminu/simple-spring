@@ -5,7 +5,7 @@
 # ----------------------------------------------------
 
 # 중지할 JAR 파일 이름 (start.sh와 동일해야 함)
-JAR_FILE="simple_spring-0.1.1.jar"
+JAR_FILE="app.jar"
 
 echo "--- $JAR_FILE 서비스 중지 중 ---"
 
